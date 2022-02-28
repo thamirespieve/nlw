@@ -5,6 +5,10 @@
   box-sizing: border-box;
 }
 
+ul {
+  list-style: none; /* Retirando estilo padrão*/
+}
+
 a {
   text-decoration: none; /*Tirando a decoração */
 }
@@ -38,7 +42,7 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-h1 {
+.title {
   font: 700 1.875rem 'Poppins', sans-serif;
   color: var(--title-color);
   -webkit-font-smoothing: auto;
@@ -97,6 +101,13 @@ h1 {
   width: 100%;
 }
 
+main {
+  /*valor era 32 px portanto 32/16 = 2rem* obs 16 é o valor padrão nos browser*/
+  margin-top: calc(var(--header-height) + 2rem);
+}
+
+/*====  NAVIGATION ============================ */
+
 nav {
   height: var(
     --header-height
@@ -107,6 +118,88 @@ nav {
   width: 100%;
 }
 
+nav ul li {
+  text-align: center;
+}
+
+nav ul li a {
+  transition: color 0.3s;
+  position: relative;
+}
+
+nav ul li a:hover {
+  color: var(--base-color);
+}
+
+nav ul li a::after {
+  content: '';
+  width: 0%;
+  height: 2px;
+
+  background: var(--base-color);
+
+  position: absolute;
+  left: 0;
+  bottom: -1.5rem;
+
+  transition: width 0.2s;
+}
+
+nav ul li a:hover::after {
+  width: 100%;
+}
+
+nav .menu {
+  opacity: 0;
+  visibility: hidden; /*escondendo menu*/
+}
+
+/* MOSTRANDO O MENU*/
+nav.show .menu {
+  opacity: 1;
+  visibility: visible;
+
+  background: var(--body-color);
+
+  height: 100vh; /* Unidade vh é a altura do dispositivo*/
+  width: 100vw; /* Unidade vh é a largura do dispositivo*/
+
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+nav.show .menu {
+  display: grid;
+  place-content: center; /*Centralizando o menu*/
+}
+
+nav .show ul.grid {
+  gap: 4rem; /* Espaço padrão */
+}
+
+/* TOGGLE MENU*/
+
+.toggle {
+  color: var(--base-color);
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+nav .icon-close {
+  opacity: 0;
+  visibility: hidden;
+
+  position: absolute;
+  right: 1.5rem;
+}
+
+nav.show .icon-close {
+  opacity: 1;
+  visibility: visible;
+}
+
+/*====  LOGO ============================ */
 .logo {
   font: 700 1.31rem 'Poppins', sans-serif;
   color: var(--title-color);
@@ -114,10 +207,6 @@ nav {
 
 .logo span {
   color: var(--base-color);
-}
-
-main {
-  margin-top: var(--header-height);
 }
 
 /*====  HOME ============================ */
