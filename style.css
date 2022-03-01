@@ -35,6 +35,10 @@ img {
 }
 
 /*====  BASE ============================ */
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font: 400 1rem 'DM Sans', sans-serif;
   color: var(--text-color);
@@ -73,6 +77,15 @@ body {
   );
 }
 
+.divider-2 {
+  height: 1px;
+  background: linear-gradient(
+    270deg,
+    hsla(var(--hue), 65%, 88%, 0.34),
+    hsla(var(--hue), 36%, 57%, 1)
+  );
+}
+
 /*====  LAYOUT ============================ */
 .container {
   margin-left: 1.5rem; /* valor era 24 px portanto 24/16 = 1.5rem* obs 16 é o valor nos browser*/
@@ -88,6 +101,18 @@ body {
   padding: 5rem 0; /*valor era 80px portanto  80/6 = 5 rem* obs 16 é o valor nos browser*/
 }
 
+.section .title {
+  margin-bottom: 1rem;
+}
+
+.section header {
+  margin-bottom: 4rem;
+}
+
+.section header strong {
+  color: var(--base-color);
+}
+
 #header {
   border-bottom: 1px solid #e4e4e4;
   margin-bottom: 2rem;
@@ -101,6 +126,9 @@ body {
   width: 100%;
 }
 
+#header.scroll {
+  box-shadow: 0px 0px 12px rgba(0, 0, 0, 15);
+}
 main {
   /*valor era 32 px portanto 32/16 = 2rem* obs 16 é o valor padrão nos browser*/
   margin-top: calc(var(--header-height) + 2rem);
@@ -152,6 +180,12 @@ nav ul li a:hover::after {
 nav .menu {
   opacity: 0;
   visibility: hidden; /*escondendo menu*/
+  top: -20rem;
+  transition: 0.2s;
+}
+
+nav .menu ul {
+  display: none;
 }
 
 /* MOSTRANDO O MENU*/
@@ -167,11 +201,13 @@ nav.show .menu {
   position: fixed;
   top: 0;
   left: 0;
-}
 
-nav.show .menu {
   display: grid;
   place-content: center; /*Centralizando o menu*/
+}
+
+nav.show .menu ul {
+  display: grid;
 }
 
 nav .show ul.grid {
@@ -191,12 +227,16 @@ nav .icon-close {
   visibility: hidden;
 
   position: absolute;
+  top: -1.5rem; /*Começar a mostra o menu de 'cima'*/
   right: 1.5rem;
+
+  transition: 0.2s;
 }
 
 nav.show .icon-close {
   opacity: 1;
   visibility: visible;
+  top: 1.5rem; /*termina o menu*/
 }
 
 /*====  LOGO ============================ */
@@ -210,6 +250,10 @@ nav.show .icon-close {
 }
 
 /*====  HOME ============================ */
+#home .container {
+  margin: 0;
+}
+
 #home {
   overflow: hidden;
 }
@@ -255,4 +299,67 @@ nav.show .icon-close {
 
 #home .text p {
   margin-bottom: 2rem;
+}
+
+/* ============ ABOUT ===========*/
+#about {
+  background: white;
+}
+
+#about .container {
+  margin: 0;
+}
+
+#about .image {
+  position: relative;
+}
+
+#about .image::before {
+  content: '';
+  height: 100%;
+  width: 100%;
+  background: var(--base-color-second);
+  position: absolute;
+  top: -8.3%; /*34*100/405 = 8.3%, 34 é o deslocamento e 405 altura*/
+  left: -33%; /*192*100/581 = 33%, 192 é o deslocamento e 581 altura*/
+  z-index: 0;
+}
+
+#about .image img {
+  position: relative; /*valor era 43px portanto  43/6 = 2.93 rem* obs 16 é o valor nos browser*/
+}
+
+#about .image img,
+#about .image::before {
+  border-radius: 0.25rem;
+}
+
+#about .text {
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+}
+
+/* ============ CARDS ===========*/
+.cards.grid {
+  gap: 1.5rem;
+}
+
+.card {
+  padding: 3.625rem 2rem;
+  box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.08);
+  border-bottom: 0.25rem solid var(--base-color);
+  border-radius: 0.25rem 0.25rem 0 0;
+  text-align: center;
+}
+
+.card i {
+  display: block;
+  margin-bottom: 1.5rem;
+  font-size: 5rem;
+  color: var(--base-color);
+}
+
+.card .title {
+  font-size: 1.5rem;
+  margin-bottom: 0.75rem;
 }
