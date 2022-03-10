@@ -9,15 +9,20 @@
     <!--ICONES-->
     <link rel="stylesheet" href="assets/fonts/style.css" />
 
+     <!-- Swiper-->
+     <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
+
     <!-- Page Style-->
     <link rel="stylesheet" href="style.css" />
-
+    
     <!-- Fontes-->
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
-      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Poppins:wght@400;500;700&display=swap"
-      rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Poppins:wght@400;500;700&display=swap"
+    rel="stylesheet"
     />
+    
+   
   </head>
   <body>
     <!-- Cabeçalho-->
@@ -44,6 +49,8 @@
     </header>
     <main>
       <!-- Seções-->
+      <!-- HOME-->
+
       <section class="section" id="home">
         <div class="container grid">
           <div class="image">
@@ -64,6 +71,8 @@
       </section>
 
       <div class="divider-1"></div>
+
+      <!-- ABOUT-->
 
       <section class="section" id="about">
         <div class="container grid">
@@ -98,7 +107,10 @@
           </div>
         </div>
       </section>
+
       <div class="divider-2"></div>
+
+      <!-- SERVICE-->
 
       <section class="section" id="services">
         <div class="container grid">
@@ -139,11 +151,70 @@
         </div>
       </section>
 
+      <div class="divider-1"></div>
+
+      <!-- TESTIMONIALS-->
       <section class="section" id="testimonials">
-        <div class="container grid">Depoimento</div>
+        <div class="container">
+          <header>
+            <h2 class="title">Depoimentos de que já passou por aqui</h2>
+          </header>
+          <div class="testimonials swiper">
+            <div class="swiper-wrapper"> 
+
+               <div class="testimonial swiper-slide">
+                            <blockquote>
+                              <p>
+                                <span>&ldquo;</span> Eu sou cliente do Beautysalon há 5 anos e
+                                não troco por nada! Certamente meu cabelo mudou muito depois que
+                                comecei a tratar somente com produtos naturais e veganos. São
+                                profissionais incríveis e qualificados.
+                              </p>
+                              <cite> <img src="assets/foto/54.jpg" alt="Foto de Wanessa Souza"> Wanessa Souza
+              
+                            </blockquote>
+                          </cite>
+                 </div>
+              
+               <div class="testimonial swiper-slide">
+                            <blockquote>
+                              <p>
+                                <span>&ldquo;</span> Minha mãe frequenta o salão há anos e me
+                                levou um dia para conhecer. Minha experiência foi incrível, eu
+                                continuo fazendo o a terapia capilar e isso salvou o meu cabelo.
+                                Adoro todos os profissionais do Beautysalon.
+                              </p>
+                              <cite><img src="assets/foto/21.jpg" alt=" Fotos Franciele Venga">Franciele Venga
+              
+                            </blockquote>
+                          </cite>
+               </div>
+              
+               <div class="testimonial swiper-slide">
+                            <blockquote>
+                              <p>
+                                <span>&ldquo;</span> Minha mãe frequenta o salão há anos e me
+                                levou um dia para conhecer. Minha experiência foi incrível, eu
+                                continuo fazendo o a terapia capilar e isso salvou o meu cabelo.
+                                Adoro todos os profissionais do Beautysalon.
+                              </p>
+                              <cite><img src="assets/foto/65.jpg" alt=" Fotos Rafaela Braga">Rafaela Braga
+              
+                            </blockquote>
+                          </cite>
+                </div>
+            </div>
+             <!-- If we need pagination -->
+            <div class="swiper-pagination"></div> 
+    
+          </div>
+        </div>
       </section>
     </main>
 
+    <!--Swiper.js-->
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+    <!--Main.js-->
     <script src="main.js"></script>
   </body>
 </html>

@@ -31,3 +31,15 @@ window.addEventListener('scroll', function () {
     header.classList.remove('scroll')
   }
 })
+
+/* Testimonials Swiper*/
+
+const swiper = new Swiper('.swiper', {
+  slidesPerView: 1,
+  pagination: {
+    el: '.swiper-pagination',
+    type: 'bullets'
+  },
+  mousewheel: true,
+  keyboard: true
+})
